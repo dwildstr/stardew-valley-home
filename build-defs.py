@@ -23,7 +23,5 @@ for line in fileinput.input():
     if len(params)<6:
         continue
     b64string = getBase64(params[0],int(params[1])*blockSize,int(params[2])*blockSize,int(params[3])*blockSize,int(params[4])*blockSize)
-    print('  <g id ="'+params[5]+'">')
-    print('    <image x="0" y="0" width="'+str(int(params[3])*blockSize)+'" height="'+str(int(params[4])*blockSize)+'" href="data:image/png;base64,'+b64string+'"/>')
-    print('  </g>')
+    print('    <image id ="'+params[5]+'"x="0" y="0" width="'+str(int(params[3])*blockSize)+'" height="'+str(int(params[4])*blockSize)+'" href="data:image/png;base64,'+b64string+'"/>')
 print('</defs>')
